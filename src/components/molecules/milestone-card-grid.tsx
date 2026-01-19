@@ -68,8 +68,8 @@ export function MilestoneCardGrid({
                   <Image
                     src={item.image_url}
                     alt={item.title}
-                    width={1000}
-                    height={1000}
+                    width={300}
+                    height={300}
                     className="transition group-hover:scale-105 aspect-video object-cover"
                   />
                 ) : (
