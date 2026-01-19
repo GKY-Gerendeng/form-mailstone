@@ -18,12 +18,12 @@ const data = [
     label: "Home",
   },
   {
-    href: "/",
+    href: "/form",
     icon: Pencil,
     label: "Form",
   },
   {
-    href: "/",
+    href: "/account",
     icon: User,
     label: "Account",
   },
