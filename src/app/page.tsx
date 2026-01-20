@@ -2,6 +2,7 @@ import { getMilestones, isAdmin } from "@/lib/actions/milestones";
 import { MilestoneCardGrid } from "@/components/molecules/milestone-card-grid";
 import { ErrorNotification } from "@/components/molecules/error-notification";
 import { Suspense } from "react";
+import { Header } from "@/components/organism/header";
 
 export default async function Home() {
   const [milestonesResult, adminStatus] = await Promise.all([
@@ -14,19 +15,16 @@ export default async function Home() {
     : [];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Suspense fallback={null}>
-        <ErrorNotification />
-      </Suspense>
-      <main className="sm:pb-0 pb-[30%] flex flex-col gap-8 p-4 sm:p-6 max-w-5xl mx-auto min-h-screen">
-        <div className="mt-3">
-          <h1 className="font-bold text-3xl text-center">
-            GKY Gerendeng Milestone
-          </h1>
-          <p className="text-center text-muted-foreground"></p>
-        </div>
-        <MilestoneCardGrid milestones={milestones} isAdmin={adminStatus} />
-      </main>
-    </div>
+    <>
+      <Header />
+      <div className="min-h-screen bg-background">
+        <Suspense fallback={null}>
+          <ErrorNotification />
+        </Suspense>
+        <main className="mt-6 sm:pb-0 pb-[30%] flex flex-col gap-8 p-4 sm:p-6 max-w-5xl mx-auto min-h-screen">
+          <MilestoneCardGrid milestones={milestones} isAdmin={adminStatus} />
+        </main>
+      </div>
+    </>
   );
 }

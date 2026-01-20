@@ -102,5 +102,5 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ---
 
-[Unreleased]: https://github.com/GKY-Gerendeng/form-mailstone/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/GKY-Gerendeng/form-mailstone/releases/tag/v1.0.0
+[Unreleased]: https://github.com/GKY-Gerendeng/form-milestone/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/GKY-Gerendeng/form-milestone/releases/tag/v1.0.0

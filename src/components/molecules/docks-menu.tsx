@@ -2,14 +2,13 @@
 
 import React from "react";
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import { HomeIcon, User, Pencil } from "lucide-react";
+import { HomeIcon, User, Pencil, GitPullRequestArrow } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/shadcn/tooltip";
 import Link from "next/link";
-import { ModeToggle } from "@/components/molecules/mode-toggle";
 
 const data = [
   {
@@ -26,6 +25,11 @@ const data = [
     href: "/account",
     icon: User,
     label: "Account",
+  },
+  {
+    href: "https://github.com/iyansanjaya/gkygrd-mailstone",
+    icon: GitPullRequestArrow,
+    label: "GitHub",
   },
 ];
 
@@ -49,16 +53,6 @@ export function DockMenu() {
             </Tooltip>
           </DockIcon>
         ))}
-        <DockIcon>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <ModeToggle />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Toggle Theme</p>
-            </TooltipContent>
-          </Tooltip>
-        </DockIcon>
       </Dock>
     </div>
   );

@@ -19,14 +19,14 @@ Proyek ini mengadopsi [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md)
 
 ### 🐛 Melaporkan Bug
 
-1. Cek [Issues](https://github.com/GKY-Gerendeng/form-mailstone/issues) untuk memastikan bug belum dilaporkan
+1. Cek [Issues](https://github.com/GKY-Gerendeng/form-milestone/issues) untuk memastikan bug belum dilaporkan
 2. Buat issue baru dengan template "Bug Report"
 3. Sertakan langkah-langkah untuk mereproduksi bug
 4. Sertakan screenshot jika membantu
 
 ### 💡 Mengusulkan Fitur
 
-1. Cek [Issues](https://github.com/GKY-Gerendeng/form-mailstone/issues) untuk memastikan fitur belum diusulkan
+1. Cek [Issues](https://github.com/GKY-Gerendeng/form-milestone/issues) untuk memastikan fitur belum diusulkan
 2. Buat issue baru dengan template "Feature Request"
 3. Jelaskan use case dan manfaat fitur tersebut
 
@@ -51,8 +51,8 @@ Proyek ini mengadopsi [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md)
 
 ```bash
 # 1. Fork dan clone repository
-git clone https://github.com/YOUR_USERNAME/form-mailstone.git
-cd form-mailstone
+git clone https://github.com/YOUR_USERNAME/form-milestone.git
+cd form-milestone
 
 # 2. Install dependencies
 pnpm install

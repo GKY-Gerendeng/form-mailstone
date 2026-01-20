@@ -125,7 +125,7 @@ export function LoginForm({
         <FieldGroup>
           <div className="flex flex-col items-center gap-2 text-center">
             <Image src="/logo.svg" alt="Logo" width={100} height={100} />
-            <h1 className="text-xl font-bold">GKY Gerendeng Milestone</h1>
+            <h1 className="text-xl font-bold">GKY Gerendeng Journey</h1>
           </div>
 
           {/* Pesan Error */}

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -53,7 +54,7 @@ export function MilestoneCardGrid({
   if (milestones.length === 0) {
     return (
       <div className="text-center py-12 text-muted-foreground">
-        <p>Belum ada milestone.</p>
+        <p>Belum ada journey.</p>
       </div>
     );
   }
@@ -71,6 +72,7 @@ export function MilestoneCardGrid({
                     alt={item.title}
                     width={300}
                     height={300}
+                    loading="eager"
                     className="w-full transition group-hover:scale-105 aspect-video object-cover"
                   />
                 ) : (
@@ -79,6 +81,7 @@ export function MilestoneCardGrid({
                     alt={item.title}
                     width={300}
                     height={300}
+                    loading="eager"
                     className="w-full transition group-hover:scale-105 aspect-video object-cover"
                   />
                 )}
@@ -116,7 +119,7 @@ export function MilestoneCardGrid({
                   {formatDate(item.event_date)}
                 </p>
                 {item.description && (
-                  <p className="text-muted-foreground line-clamp-2 sm:text-base text-sm">
+                  <p className="text-muted-foreground line-clamp-2 text-sm">
                     {item.description}
                   </p>
                 )}
@@ -133,6 +136,7 @@ export function MilestoneCardGrid({
                       alt={item.title}
                       width={300}
                       height={300}
+                      loading="eager"
                       className="w-full h-auto transition group-hover:scale-105 object-cover"
                       style={{
                         borderRadius: 8,
@@ -144,6 +148,7 @@ export function MilestoneCardGrid({
                       alt={item.title}
                       width={300}
                       height={300}
+                      loading="eager"
                       className="w-full h-auto transition group-hover:scale-105 object-cover"
                       style={{
                         borderRadius: 8,
@@ -152,9 +157,9 @@ export function MilestoneCardGrid({
                   )}
                 </div>
                 <DialogTitle className="mt-3">{item.title}</DialogTitle>
-                <p className="text-muted-foreground text-sm">
+                <DialogDescription>
                   {formatDate(item.event_date)}
-                </p>
+                </DialogDescription>
                 {item.description && (
                   <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">
                     <ReactMarkdown>{item.description}</ReactMarkdown>

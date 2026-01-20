@@ -274,9 +274,9 @@ export function MilestoneEditForm({
           <div>
             <CardTitle className="flex items-center gap-2">
               <FileText className="size-5" />
-              Edit Milestone
+              Edit Journey
             </CardTitle>
-            <CardDescription>Perbarui informasi milestone</CardDescription>
+            <CardDescription>Perbarui informasi journey</CardDescription>
           </div>
 
           {/* Tombol Delete */}
@@ -288,9 +288,9 @@ export function MilestoneEditForm({
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Hapus Milestone?</DialogTitle>
+                <DialogTitle>Hapus Journey?</DialogTitle>
                 <DialogDescription>
-                  Tindakan ini tidak dapat dibatalkan. Milestone &quot;
+                  Tindakan ini tidak dapat dibatalkan. Journey &quot;
                   {milestone.title}&quot; akan dihapus secara permanen.
                 </DialogDescription>
               </DialogHeader>
@@ -419,7 +419,7 @@ export function MilestoneEditForm({
               <FieldLabel htmlFor="description">Deskripsi</FieldLabel>
               <Textarea
                 id="description"
-                placeholder="Deskripsi detail tentang milestone ini..."
+                placeholder="Deskripsi detail tentang journey ini..."
                 value={description}
                 onChange={(e) => {
                   setDescription(e.target.value);
@@ -542,7 +542,7 @@ export function MilestoneEditForm({
               )}
 
               <FieldDescription>
-                Upload gambar untuk milestone (opsional)
+                Upload gambar untuk journey (opsional)
               </FieldDescription>
             </Field>
 

@@ -129,7 +129,7 @@ src/
 ```bash
 # 1. Clone repository
 git clone <repository-url>
-cd form-mailstone
+cd form-milestone
 
 # 2. Install dependencies
 pnpm install

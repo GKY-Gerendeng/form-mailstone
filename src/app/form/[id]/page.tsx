@@ -37,10 +37,10 @@ export default async function EditPage({ params }: EditPageProps) {
       <main className="flex flex-col gap-8 p-4 sm:p-6 max-w-2xl mx-auto min-h-screen pb-24">
         <div className="mt-3">
           <h1 className="font-bold text-2xl sm:text-3xl text-center">
-            Edit Milestone
+            Edit Journey
           </h1>
           <p className="text-center text-sm sm:text-base text-muted-foreground mt-2">
-            Perbarui informasi milestone
+            Perbarui informasi journey
           </p>
         </div>
         <MilestoneEditForm milestone={milestoneResult.data} />

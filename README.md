@@ -1,4 +1,4 @@
-# 📋 GKY Gerendeng Milestone
+# 📋 Milestone Web App
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.1.3-black?logo=next.js)](https://nextjs.org/)
@@ -53,8 +53,8 @@ Aplikasi web untuk mencatat milestone/event khusus dengan autentikasi dan manaje
 
 ```bash
 # Clone repository
-git clone https://github.com/GKY-Gerendeng/form-mailstone.git
-cd form-mailstone
+git clone https://github.com/GKY-Gerendeng/form-milestone.git
+cd form-milestone
 
 # Install dependencies
 pnpm install

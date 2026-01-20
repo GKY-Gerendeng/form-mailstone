@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GKY Gerendeng Milestone",
+  title: "GKY Gerendeng's Journey",
   description: "Website internal untuk mencatat milestone GKY Gerendeng",
 };
 

@@ -21,7 +21,7 @@ export function ErrorNotification() {
       toast.error("Akses Ditolak", {
         id: "unauthorized-error",
         description:
-          "Anda bukan admin. Hanya admin yang dapat menambah atau mengedit milestone.",
+          "Anda bukan admin. Hanya admin yang dapat menambah atau mengedit journey.",
         duration: 5000,
       });
 

@@ -171,7 +171,7 @@ export function MilestoneForm({ className }: MilestoneFormProps) {
       });
 
       if (result.success) {
-        setSuccess("Milestone berhasil ditambahkan!");
+        setSuccess("Journey berhasil ditambahkan!");
         // Reset form
         setTitle("");
         setDescription("");
@@ -185,7 +185,7 @@ export function MilestoneForm({ className }: MilestoneFormProps) {
           router.refresh();
         }, 1500);
       } else {
-        setError(result.error || "Gagal menambahkan milestone");
+        setError(result.error || "Gagal menambahkan journey");
       }
     });
   };
@@ -209,10 +209,10 @@ export function MilestoneForm({ className }: MilestoneFormProps) {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <FileText className="size-5" />
-          Form Milestone
+          Form Journey
         </CardTitle>
         <CardDescription>
-          Isi detail milestone yang ingin ditambahkan
+          Isi detail journey yang ingin ditambahkan
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -313,7 +313,7 @@ export function MilestoneForm({ className }: MilestoneFormProps) {
               <FieldLabel htmlFor="description">Deskripsi</FieldLabel>
               <Textarea
                 id="description"
-                placeholder="Deskripsi detail tentang milestone ini..."
+                placeholder="Deskripsi detail tentang journey ini..."
                 value={description}
                 onChange={(e) => {
                   setDescription(e.target.value);
@@ -431,7 +431,7 @@ export function MilestoneForm({ className }: MilestoneFormProps) {
               )}
 
               <FieldDescription>
-                Upload gambar untuk milestone (opsional)
+                Upload gambar untuk journey (opsional)
               </FieldDescription>
             </Field>
 
@@ -457,7 +457,7 @@ export function MilestoneForm({ className }: MilestoneFormProps) {
                     Menyimpan...
                   </>
                 ) : (
-                  "Simpan Milestone"
+                  "Simpan Journey"
                 )}
               </Button>
             </div>

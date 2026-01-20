@@ -106,7 +106,7 @@ export function AccountCard({ user, signOutAction }: AccountCardProps) {
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button
-              variant="outline"
+              variant="default"
               className="w-full"
               disabled={isLoggingOut}
             >

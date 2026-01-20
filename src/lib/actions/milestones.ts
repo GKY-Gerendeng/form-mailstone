@@ -124,7 +124,7 @@ export async function getMilestoneById(
   if (error) {
     return {
       success: false,
-      error: "Milestone tidak ditemukan",
+      error: "Journey tidak ditemukan",
     };
   }
 
