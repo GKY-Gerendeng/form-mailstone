@@ -18,11 +18,6 @@ const nextConfig: NextConfig = {
         hostname: "c1o7.sg02.idrivee2-90.com",
         pathname: "/**",
       },
-      {
-        protocol: "https",
-        hostname: "e2.idrivee2.com",
-        pathname: "/**",
-      },
     ],
   },
 };

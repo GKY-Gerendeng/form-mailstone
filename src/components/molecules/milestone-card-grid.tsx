@@ -5,19 +5,20 @@ import { useRouter } from "next/navigation";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/shadcn/dialog";
 import { Button } from "@/components/shadcn/button";
 import { Ellipsis } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/shadcn/popover";
 import type { Milestone } from "@/lib/types/milestones";
+import { ScrollArea } from "@/components/shadcn/scroll-area";
 
 interface MilestoneCardGridProps {
   milestones: Milestone[];
@@ -70,15 +71,15 @@ export function MilestoneCardGrid({
                     alt={item.title}
                     width={300}
                     height={300}
-                    className="transition group-hover:scale-105 aspect-video object-cover"
+                    className="w-full transition group-hover:scale-105 aspect-video object-cover"
                   />
                 ) : (
                   <Image
                     src="/images/sample.jpg"
                     alt={item.title}
-                    width={1000}
-                    height={1000}
-                    className="transition group-hover:scale-105 aspect-video object-cover"
+                    width={300}
+                    height={300}
+                    className="w-full transition group-hover:scale-105 aspect-video object-cover"
                   />
                 )}
 
@@ -122,16 +123,45 @@ export function MilestoneCardGrid({
               </div>
             </div>
           </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>{item.title}</DialogTitle>
-              <p className="text-muted-foreground text-sm">
-                {formatDate(item.event_date)}
-              </p>
-              {item.description && (
-                <DialogDescription>{item.description}</DialogDescription>
-              )}
-            </DialogHeader>
+          <DialogContent className="p-3.5 md:p-4">
+            <ScrollArea className="h-[440px] sm:h-[500px]">
+              <DialogHeader>
+                <div className="w-full">
+                  {item.image_url ? (
+                    <Image
+                      src={item.image_url}
+                      alt={item.title}
+                      width={300}
+                      height={300}
+                      className="w-full h-auto transition group-hover:scale-105 object-cover"
+                      style={{
+                        borderRadius: 8,
+                      }}
+                    />
+                  ) : (
+                    <Image
+                      src="/images/sample.jpg"
+                      alt={item.title}
+                      width={300}
+                      height={300}
+                      className="w-full h-auto transition group-hover:scale-105 object-cover"
+                      style={{
+                        borderRadius: 8,
+                      }}
+                    />
+                  )}
+                </div>
+                <DialogTitle className="mt-3">{item.title}</DialogTitle>
+                <p className="text-muted-foreground text-sm">
+                  {formatDate(item.event_date)}
+                </p>
+                {item.description && (
+                  <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">
+                    <ReactMarkdown>{item.description}</ReactMarkdown>
+                  </div>
+                )}
+              </DialogHeader>
+            </ScrollArea>
           </DialogContent>
         </Dialog>
       ))}

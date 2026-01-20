@@ -50,6 +50,8 @@ Website internal untuk mencatat milestone/event khusus GKY Gerendeng. Fitur utam
 | **date-fns** | - | Date formatting |
 | **react-day-picker** | - | Calendar component |
 | **Sonner** | - | Toast notification library |
+| **react-markdown** | 10.x | Markdown renderer |
+| **@tailwindcss/typography** | 0.5.x | Prose styling untuk Markdown |
 
 ---
 
@@ -68,6 +70,7 @@ src/
 │   │   │   └── page.tsx
 │   │   └── page.tsx          # Form tambah milestone
 │   ├── loading.tsx           # Global Loading UI
+│   ├── not-found.tsx         # 404 Page
 │   ├── login/                # Halaman login
 │   │   └── page.tsx
 │   ├── otp/                  # Halaman verifikasi OTP
@@ -80,7 +83,9 @@ src/
 │   ├── molecules/            # Komponen medium
 │   │   ├── docks-menu.tsx    # Bottom navigation
 │   │   ├── error-notification.tsx # Toast notifikasi error
-│   │   └── milestone-card-grid.tsx
+│   │   ├── image-upload.tsx  # Komponen upload gambar reusable
+│   │   ├── milestone-card-grid.tsx # Grid kartu milestone
+│   │   └── mode-toggle.tsx   # Toggle dark/light mode
 │   ├── organism/             # Komponen besar
 │   │   ├── account-card.tsx  # Card info akun
 │   │   ├── login-form.tsx    # Form login
@@ -397,7 +402,7 @@ Gambar di-upload ke **S3-compatible storage** (iDrive E2) dengan private bucket.
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 // 2. File size limit
-const MAX_FILE_SIZE = 250 * 1024; // 250KB
+const MAX_FILE_SIZE = 1000 * 1024; // 1MB
 
 // 3. Magic bytes validation (mencegah MIME spoofing)
 const FILE_SIGNATURES = {
@@ -488,7 +493,8 @@ Form verifikasi OTP dengan:
 ### MilestoneCardGrid (`src/components/molecules/milestone-card-grid.tsx`)
 
 Grid kartu milestone dengan:
-- Dialog detail on click
+- Dialog detail on click dengan ScrollArea
+- **Markdown rendering** untuk description menggunakan `react-markdown`
 - Admin-only edit button
 - Image fallback
 - Responsive grid
@@ -523,6 +529,27 @@ Menggunakan native Next.js Loading UI untuk pengalaman pengguna yang lebih baik:
 - Otomatis aktif saat navigasi antar route
 - Menampilkan spinner animasi di tengah layar
 - Menggantikan konten lama secara instan saat memuat konten baru (React Suspense)
+
+### Not Found Page (`src/app/not-found.tsx`)
+
+Halaman 404 kustom dengan:
+- Desain konsisten dengan tema aplikasi
+- Tombol kembali ke beranda
+
+### ImageUpload (`src/components/molecules/image-upload.tsx`)
+
+Komponen reusable untuk upload gambar dengan:
+- Drag and drop support
+- Validasi file size (max 1MB)
+- Validasi MIME type (JPEG, PNG, WebP)
+- Preview gambar
+- Link ke compressjpeg.com untuk file terlalu besar
+
+### ModeToggle (`src/components/molecules/mode-toggle.tsx`)
+
+Toggle untuk switch dark/light mode:
+- Dropdown menu dengan opsi Light, Dark, System
+- Integrasi dengan next-themes
 
 ---
 
@@ -678,4 +705,4 @@ vercel
 
 ---
 
-*Dokumentasi terakhir diperbarui: 19 Januari 2026*
+*Dokumentasi terakhir diperbarui: 20 Januari 2026*

@@ -44,7 +44,7 @@ interface MilestoneFormProps {
   className?: string;
 }
 
-const MAX_FILE_SIZE = 250 * 1024; // 250KB
+const MAX_FILE_SIZE = 1000 * 1024; // 1MB
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 export function MilestoneForm({ className }: MilestoneFormProps) {
@@ -99,7 +99,7 @@ export function MilestoneForm({ className }: MilestoneFormProps) {
       return "Tipe file tidak didukung. Gunakan JPEG, PNG, atau WebP.";
     }
     if (file.size > MAX_FILE_SIZE) {
-      return `Ukuran file terlalu besar (${(file.size / 1024).toFixed(0)}KB). Maksimal 250KB.`;
+      return `Ukuran file terlalu besar (${(file.size / 1024).toFixed(0)}KB). Maksimal 1MB.`;
     }
     return null;
   };
@@ -407,7 +407,7 @@ export function MilestoneForm({ className }: MilestoneFormProps) {
                       Klik atau drag gambar ke sini
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      JPEG, PNG, WebP (max 250KB)
+                      JPEG, PNG, WebP (max 1MB)
                     </div>
                   </div>
                 </div>
@@ -416,7 +416,7 @@ export function MilestoneForm({ className }: MilestoneFormProps) {
               {fieldErrors.image && (
                 <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">
                   <p>{fieldErrors.image}</p>
-                  {fieldErrors.image.includes("250KB") && (
+                  {fieldErrors.image.includes("1MB") && (
                     <a
                       href="https://compressjpeg.com/"
                       target="_blank"

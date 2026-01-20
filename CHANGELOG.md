@@ -30,7 +30,7 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - 📷 **Image Upload**
   - Upload gambar ke S3-compatible storage (iDrive E2)
   - Private bucket dengan presigned URLs
-  - Validasi file size (max 250KB)
+  - Validasi file size (max 1MB)
   - Validasi MIME type (JPEG, PNG, WebP)
   - Magic bytes validation (mencegah MIME spoofing)
   - Link ke compressjpeg.com untuk file terlalu besar

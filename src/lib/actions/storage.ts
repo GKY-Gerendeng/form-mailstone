@@ -25,7 +25,7 @@ const s3Client = new S3Client({
 const BUCKET_NAME = process.env.S3_BUCKET_NAME || "milestones";
 
 // Konstanta
-const MAX_FILE_SIZE = 250 * 1024; // 250KB
+const MAX_FILE_SIZE = 1000 * 1024; // 1MB
 const PRESIGNED_URL_EXPIRES = 3600; // 1 jam dalam detik
 
 // Magic bytes untuk validasi tipe file (mencegah MIME spoofing)
@@ -120,7 +120,7 @@ export async function uploadMilestoneImage(
   if (file.size > MAX_FILE_SIZE) {
     return {
       success: false,
-      error: `Ukuran file terlalu besar (max 250KB). Silakan compress gambar di https://compressjpeg.com/`,
+      error: `Ukuran file terlalu besar (max 1MB). Silakan compress gambar di https://compressjpeg.com/`,
     };
   }
 

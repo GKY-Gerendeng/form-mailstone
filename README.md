@@ -16,6 +16,7 @@ Aplikasi web untuk mencatat milestone/event khusus dengan autentikasi dan manaje
 - 📝 **Milestones** - Catatan event/aktivitas dengan gambar
 - 📷 **Image Upload** - Upload gambar ke S3-compatible storage (private bucket)
 - 📅 **Calendar Picker** - Pilih tanggal dengan dropdown bulan/tahun
+- 📄 **Markdown Support** - Deskripsi milestone mendukung format Markdown
 - 👤 **Admin Only** - Hanya admin yang bisa create/edit/delete
 - 🔒 **Protected Routes** - Semua halaman memerlukan login
 - 🌙 **Dark Mode** - Support tema gelap
@@ -34,6 +35,8 @@ Aplikasi web untuk mencatat milestone/event khusus dengan autentikasi dan manaje
 | [Tailwind CSS](https://tailwindcss.com/) | 4.x | Utility-first CSS |
 | [Shadcn UI](https://ui.shadcn.com/) | - | Component library |
 | [Zod](https://zod.dev/) | 4.3.5 | Schema validation |
+| [React Markdown](https://github.com/remarkjs/react-markdown) | 10.x | Markdown renderer |
+| [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin) | 0.5.x | Prose styling |
 
 ---
 
