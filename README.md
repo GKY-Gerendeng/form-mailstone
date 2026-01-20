@@ -145,6 +145,15 @@ INSERT INTO admins (user_id) VALUES ('YOUR_USER_ID');
 - **Providers**: Enable Google di Authentication → Providers
 - **Redirect URLs**: Tambahkan `http://localhost:3000/auth/callback`
 
+### 4. Konfigurasi Registrasi Email OTP
+
+> **⚠️ PENTING:** Untuk mengaktifkan/menonaktifkan registrasi user baru via email, ubah `shouldCreateUser` di `src/lib/actions/auth.ts`:
+
+```typescript
+// true = user baru bisa register, false = hanya existing user
+shouldCreateUser: true,
+```
+
 ---
 
 ## 📖 Dokumentasi Lengkap

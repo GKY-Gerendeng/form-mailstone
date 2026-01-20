@@ -313,6 +313,28 @@ INSERT INTO admins (user_id) VALUES ('YOUR_USER_ID');
 - Proxy refresh session setiap request
 - Session expire mengikuti Supabase config (default 1 minggu)
 
+### Konfigurasi Registrasi Email OTP
+
+Registrasi user baru melalui email OTP dapat dikontrol di file `src/lib/actions/auth.ts`:
+
+```typescript
+const { error } = await supabase.auth.signInWithOtp({
+  email: validationResult.data,
+  options: {
+    shouldCreateUser: true,  // true = user baru bisa register, false = hanya existing user
+  },
+});
+```
+
+| Nilai | Deskripsi |
+|-------|-----------|
+| `true` | User baru akan otomatis dibuat saat login dengan email yang belum terdaftar |
+| `false` | Hanya user yang sudah ada di database yang bisa login via email OTP |
+
+> **⚠️ Catatan Penting:** Pengaturan ini sering diubah. Pastikan nilainya sesuai kebutuhan:
+> - **Development/Testing**: `true` (memudahkan testing)
+> - **Production (terbatas)**: `false` (hanya user yang di-invite manual yang bisa akses)
+
 ---
 
 ## Milestones CRUD

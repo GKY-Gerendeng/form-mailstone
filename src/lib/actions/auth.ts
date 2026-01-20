@@ -92,7 +92,7 @@ export async function signInWithOTP(email: string): Promise<AuthResult> {
   const { error } = await supabase.auth.signInWithOtp({
     email: validationResult.data,
     options: {
-      shouldCreateUser: false,
+      shouldCreateUser: true,
     },
   });
 
